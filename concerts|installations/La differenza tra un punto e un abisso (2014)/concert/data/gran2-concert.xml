@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<pattrstorage name = "gran-2">
+	<slot number = "1" name = "wide">
+		<pattr name = "grain-delay" value = "708.661438" />
+		<pattr name = "granulation" value = "0." />
+		<pattr name = "main-scale" value = "0.094488" />
+		<pattr name = "max-amp" value = "0.6063" />
+		<pattr name = "max-len" value = "1814.960571" />
+		<pattr name = "min-amp" value = "0.299213" />
+		<pattr name = "min-len" value = "888.976379" />
+		<pattr name = "morphing" value = "0.06378" />
+		<pattr name = "pan-speed" value = "0.133858" />
+		<pattr name = "phasor-speed" value = "50." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "100." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "density" value = "0.5" />
+		<patcher name = "fct-window">
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "3" />
+		</patcher>
+	</slot>
+	<slot number = "2" name = "fast-pan">
+		<pattr name = "grain-delay" value = "173.228363" />
+		<pattr name = "granulation" value = "0." />
+		<pattr name = "main-scale" value = "0.251968" />
+		<pattr name = "max-amp" value = "0.6063" />
+		<pattr name = "max-len" value = "1814.960571" />
+		<pattr name = "min-amp" value = "0.299213" />
+		<pattr name = "min-len" value = "888.976379" />
+		<pattr name = "morphing" value = "0.06378" />
+		<pattr name = "pan-speed" value = "0.645669" />
+		<pattr name = "phasor-speed" value = "50." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "10." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "density" value = "0.237638" />
+		<patcher name = "fct-window">
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "3" />
+		</patcher>
+	</slot>
+	<slot number = "3" name = "drones">
+		<pattr name = "grain-delay" value = "1023.62207" />
+		<pattr name = "granulation" value = "0." />
+		<pattr name = "main-scale" value = "0.133858" />
+		<pattr name = "max-amp" value = "0.669292" />
+		<pattr name = "max-len" value = "1814.960571" />
+		<pattr name = "min-amp" value = "0.440945" />
+		<pattr name = "min-len" value = "1455.905518" />
+		<pattr name = "morphing" value = "0.370867" />
+		<pattr name = "pan-speed" value = "0.173228" />
+		<pattr name = "phasor-speed" value = "50." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "10." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "density" value = "0.777795" />
+		<patcher name = "fct-window">
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "3" />
+		</patcher>
+	</slot>
+	<slot number = "4" name = "freeze">
+		<pattr name = "grain-delay" value = "535.433105" />
+		<pattr name = "granulation" value = "0." />
+		<pattr name = "main-scale" value = "0.3937" />
+		<pattr name = "max-amp" value = "0.669292" />
+		<pattr name = "max-len" value = "1515.748047" />
+		<pattr name = "min-amp" value = "0.543307" />
+		<pattr name = "min-len" value = "983.464539" />
+		<pattr name = "morphing" value = "0.370867" />
+		<pattr name = "pan-speed" value = "0.173228" />
+		<pattr name = "phasor-speed" value = "0." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "70." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "density" value = "0.839528" />
+		<patcher name = "fct-window">
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "3" />
+		</patcher>
+	</slot>
+	</pattrstorage>
+

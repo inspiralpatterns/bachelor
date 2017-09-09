@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<pattrstorage name = "plate-reverb[2]">
+	<slot number = "1" name = "long-plate">
+		<pattr name = "live.numbox" value = "1." />
+		<pattr name = "live.slider" value = "0.528723" />
+		<pattr name = "live.slider[1]" value = "0.848794" />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "plate-balance" value = "0.645669" />
+		<pattr name = "plate-bandwidth" value = "1153.543335" />
+		<pattr name = "plate-damp" value = "1500." />
+		<pattr name = "plate-decay-1" value = "0.229921" />
+		<pattr name = "plate-decay-2" value = "0.754646" />
+		<pattr name = "plate-input-1" value = "0.716063" />
+		<pattr name = "plate-input-2" value = "0.808661" />
+		<pattr name = "plate-main" value = "1.53937" />
+		<pattr name = "plate-mod" value = "4.307086" />
+		<pattr name = "plate-pre" value = "215.748032" />
+		<pattr name = "plate-time" value = "0.638515" />
+	</slot>
+	<slot number = "2" name = "hall-plate">
+		<pattr name = "live.numbox" value = "2." />
+		<pattr name = "live.slider" value = "0.000796" />
+		<pattr name = "live.slider[1]" value = "1." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "plate-balance" value = "1." />
+		<pattr name = "plate-bandwidth" value = "893.7" />
+		<pattr name = "plate-damp" value = "885.826782" />
+		<pattr name = "plate-decay-1" value = "0.584882" />
+		<pattr name = "plate-decay-2" value = "0.754646" />
+		<pattr name = "plate-input-1" value = "0.731496" />
+		<pattr name = "plate-input-2" value = "0.654331" />
+		<pattr name = "plate-main" value = "1.570866" />
+		<pattr name = "plate-mod" value = "4.307086" />
+		<pattr name = "plate-pre" value = "369.291351" />
+		<pattr name = "plate-time" value = "0.788091" />
+	</slot>
+</pattrstorage>
+

@@ -1,0 +1,50 @@
+\select@language {english}
+\contentsline {chapter}{Abstract}{ii}{dummy.2}
+\vspace {1em}
+\contentsline {chapter}{Acknowledgements}{iii}{dummy.3}
+\vspace {1em}
+\contentsline {chapter}{Contents}{iv}{dummy.4}
+\contentsline {chapter}{List of Figures}{vi}{dummy.6}
+\contentsline {chapter}{List of Tables}{vii}{dummy.8}
+\vspace {2em}
+\contentsline {chapter}{\numberline {1}Project overview}{1}{chapter.10}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.11}
+\contentsline {section}{\numberline {1.2}State of the Art}{2}{section.12}
+\contentsline {subsection}{\numberline {1.2.1}Pitch Shifting}{2}{subsection.13}
+\contentsline {subsubsection}{\numberline {1.2.1.1}Time-based approaches}{2}{subsubsection.14}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Frequency-based approaches}{5}{subsubsection.15}
+\contentsline {subsection}{\numberline {1.2.2}State of the Art: Pitch Detection}{6}{subsection.25}
+\contentsline {section}{\numberline {1.3}Conclusion}{9}{section.28}
+\contentsline {chapter}{\numberline {2}Algorithm design}{10}{chapter.29}
+\contentsline {section}{\numberline {2.1}Fundamental decisions}{11}{section.30}
+\contentsline {section}{\numberline {2.2}Implementation}{11}{section.31}
+\contentsline {subsection}{\numberline {2.2.1}Pitchdetect$\sim $}{11}{subsection.32}
+\contentsline {subsection}{\numberline {2.2.2}Dlshift$\sim $}{13}{subsection.65}
+\contentsline {section}{\numberline {2.3}Issues}{16}{section.93}
+\contentsline {subsection}{\numberline {2.3.1}Vector size issues and \emph {downsampling}}{16}{subsection.94}
+\contentsline {subsection}{\numberline {2.3.2}The \emph {Confidence} parameter}{16}{subsection.95}
+\contentsline {subsection}{\numberline {2.3.3}Using a \emph {median filter}}{17}{subsection.102}
+\contentsline {subsection}{\numberline {2.3.4}De-clicking and modulation in pitch shifting}{17}{subsection.109}
+\contentsline {section}{\numberline {2.4}Conclusion}{18}{section.110}
+\contentsline {chapter}{\numberline {3}Use cases and performance}{19}{chapter.111}
+\contentsline {section}{\numberline {3.1}Musical Aspects}{20}{section.112}
+\contentsline {subsection}{\numberline {3.1.1}Harmonic context recognition}{20}{subsection.113}
+\contentsline {subsection}{\numberline {3.1.2}Chord selection control stage}{21}{subsection.115}
+\contentsline {subsection}{\numberline {3.1.3}The 'Intellichord' function}{23}{subsection.118}
+\contentsline {section}{\numberline {3.2}Interface and performance}{25}{section.121}
+\contentsline {subsection}{\numberline {3.2.1}\emph {General Parameters} control stage.}{25}{subsection.122}
+\contentsline {subsection}{\numberline {3.2.2}Beyond shifting: \emph {delay} and \emph {modulations}.}{26}{subsection.124}
+\contentsline {subsection}{\numberline {3.2.3}Output control stage.}{28}{subsection.126}
+\contentsline {section}{\numberline {3.3}Issues and future enhancements}{28}{section.128}
+\contentsline {subsection}{\numberline {3.3.1}Probabilistic networks?}{29}{subsection.129}
+\contentsline {section}{\numberline {3.4}Conclusion}{31}{section.130}
+\vspace {2em}
+\contentsline {chapter}{\numberline {A}Source code}{32}{appendix.131}
+\contentsline {section}{\numberline {A.1}AMDF-based pitch detection}{32}{section.132}
+\contentsline {section}{\numberline {A.2}Delay-line base pitch shifting}{34}{section.186}
+\contentsline {chapter}{\numberline {B}MSP external code}{36}{appendix.253}
+\contentsline {section}{\numberline {B.1}Pitchdetect$\sim $}{36}{section.254}
+\contentsline {section}{\numberline {B.2}Dlshift$\sim $}{38}{section.340}
+\vspace {2em}
+\contentsline {chapter}{Bibliography}{40}{dummy.397}
+\vspace {1em}

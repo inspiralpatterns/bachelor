@@ -1,0 +1,7 @@
+pitchdetect~
+
+bug no. 1
+
+nella finestra max, per˜, i due filtercoeff sono: 0, 0
+errori nel calcolo delle variabili?
+in tools/pitch_detect funziona tutto.

@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6eeee1a8-74fe-223f-b545-fdb9fdfc6a55++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "6eeee1a8-74fe-223f-b545-fdb9fdfc6a55++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6eeee1a8-74fe-223f-b545-fdb9fdfc6a55++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5F225718-3860-4C50-8081-046C911FDFC3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6eeee1a8-74fe-223f-b545-fdb9fdfc6a55++505" : "pitchdetect~\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "pitchdetect~",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "src\/pitchdetect~.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/maxcpp.googlecode.com\/svn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6eeee1a8-74fe-223f-b545-fdb9fdfc6a55++505"
+    }
+  ]
+}

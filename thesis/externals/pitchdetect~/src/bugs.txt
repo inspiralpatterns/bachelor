@@ -1,0 +1,4 @@
+pitchdetect~
+
+BUGS
+it doesn’t function when vector size < 512

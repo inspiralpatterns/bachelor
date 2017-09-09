@@ -1,0 +1,199 @@
+{
+	"pattrstorage" : 	{
+		"name" : "grain-preset",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "preset-1",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.696772 ],
+					"grain-delay" : [ 1212.598389 ],
+					"granulation" : [ 0 ],
+					"live.numbox" : [  ],
+					"live.text" : [  ],
+					"main-scale" : [ 0.346457 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149597 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984253 ],
+					"morphing" : [ 0.748031 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.590551 ],
+					"phasor-speed" : [  ],
+					"phi-jit" : [ 0.102362 ],
+					"pitch-1" : [  ],
+					"pitch-2" : [  ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 1.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"fct-window::scale" : [  ],
+					"fct-window::sigma" : [  ],
+					"fct-window::size" : [  ],
+					"fct-window::window-function" : [  ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"name" : "preset-2",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.256929 ],
+					"grain-delay" : [ 330.708649 ],
+					"granulation" : [ 0 ],
+					"live.numbox" : [  ],
+					"live.text" : [  ],
+					"main-scale" : [ 0.574803 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149597 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984253 ],
+					"morphing" : [ 0.897637 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.787401 ],
+					"phasor-speed" : [  ],
+					"phi-jit" : [ 0.102362 ],
+					"pitch-1" : [  ],
+					"pitch-2" : [  ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"fct-window::scale" : [  ],
+					"fct-window::sigma" : [  ],
+					"fct-window::size" : [  ],
+					"fct-window::window-function" : [  ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"name" : "preset-3",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.256929 ],
+					"grain-delay" : [ 330.708649 ],
+					"granulation" : [ 0 ],
+					"live.numbox" : [  ],
+					"live.text" : [  ],
+					"main-scale" : [ 0.929134 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149597 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984253 ],
+					"morphing" : [ 1.0 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.787401 ],
+					"phasor-speed" : [  ],
+					"phi-jit" : [ 0.102362 ],
+					"pitch-1" : [  ],
+					"pitch-2" : [  ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"fct-window::scale" : [  ],
+					"fct-window::sigma" : [  ],
+					"fct-window::size" : [  ],
+					"fct-window::window-function" : [  ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"name" : "sym",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.881969 ],
+					"grain-delay" : [ 1511.811035 ],
+					"granulation" : [ 0 ],
+					"live.numbox" : [  ],
+					"live.text" : [  ],
+					"main-scale" : [ 0.929134 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149597 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984253 ],
+					"morphing" : [ 1.0 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.787401 ],
+					"phasor-speed" : [  ],
+					"phi-jit" : [ 0.102362 ],
+					"pitch-1" : [  ],
+					"pitch-2" : [  ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"fct-window::scale" : [  ],
+					"fct-window::sigma" : [  ],
+					"fct-window::size" : [  ],
+					"fct-window::window-function" : [  ]
+				}
+
+			}
+,
+			"5" : 			{
+				"id" : 5,
+				"name" : "sym",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.658189 ],
+					"grain-delay" : [ 866.141724 ],
+					"granulation" : [ 0.0 ],
+					"live.numbox" : [ 5.0 ],
+					"live.text" : [ 1.0 ],
+					"main-scale" : [ 0.598426 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149597 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984253 ],
+					"morphing" : [ 0.803149 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.204724 ],
+					"phasor-speed" : [ 100.0 ],
+					"phi-jit" : [ 0.102362 ],
+					"pitch-1" : [ 100.0 ],
+					"pitch-2" : [ 100.0 ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"fct-window::scale" : [ 1.0 ],
+					"fct-window::sigma" : [ 0.5 ],
+					"fct-window::size" : [ 1024 ],
+					"fct-window::window-function" : [ 2 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

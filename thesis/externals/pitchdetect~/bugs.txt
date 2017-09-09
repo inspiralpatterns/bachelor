@@ -1,0 +1,7 @@
+pitchdetect~
+
+bug no. 1
+
+problemi nel ricalcolo del vectorsize.
+
+possibili miglioramenti: poter scegliere di usare o meno un valore a seconda della sua precisione stimata.

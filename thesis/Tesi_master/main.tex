@@ -1,0 +1,256 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 1.43 (17/5/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original authors:
+% Steven Gunn 
+% http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/
+% and
+% Sunil Patel
+% http://www.sunilpatel.co.uk/thesis-template/
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Note:
+% Make sure to edit document variables in the Thesis.cls file
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage[english]{babel}
+
+\hypersetup{urlcolor=black, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
+\title{\ttitle} % Defines the thesis title - don't touch this
+
+\usepackage{listings}
+ \usepackage{courier}
+
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\setstretch{1.3} % Line spacing of 1.3
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % New command to make the lines in the title page
+
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornames}
+\hypersetup{pdfkeywords=\keywordnames}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4cm]{Figures/logo.png}
+\end{center}
+\end{figure}
+
+\textsc{\LARGE \univname}\\[1.0cm] % University name
+\textsc{\Large Diploma Accademico Ordinamentale di I livello}\\[0.3cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle}\\[0.5cm] % Thesis title
+\HRule \\[0.4cm] % Horizontal line
+ 
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\href{http://www.johnsmith.com}{\authornames} % Author name - remove the \href bracket to remove the link
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+\end{flushright}
+\end{minipage}\\[2cm]
+ 
+\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of Bachelor}\\[0.6cm] % University requirement text
+
+\groupname\\\deptname\\[2cm] % Research group name and department name
+ 
+%{\large \today}\\[4cm] % Date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+\large Anno Accademico 2013/2014 \\ Sessione terza
+ 
+\vfill
+\end{center}
+
+\end{titlepage}
+
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty} % No headers or footers for the following pages
+\null\vfill\vfill\vfill
+\begin{flushright}
+\emph{Itaca tieni sempre nella mente.\\
+La tua sorte ti segna quell'approdo.\\
+Ma non precipitare il tuo viaggio.\\
+Meglio che duri molti anni, che vecchio\\
+tu finalmente attracchi all'isoletta,\\
+ricco di quanto guadagnasti in via,\\
+senza aspettare che ti dia ricchezze.}
+\end{flushright}
+\begin{flushright}
+\emph{Itaca t'ha donato il bel viaggio.\\
+Senza di lei non ti mettevi pi\`u in via.\\
+Nulla ha da darti pi\`u.}
+\end{flushright}
+
+\null\vfill % Add some space to move the quote down the page a bit
+
+
+\begin{flushright}
+Kostantinos Kavafis,
+
+\emph{Itaca}
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+
+\abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+
+The pitch organisation through time is called \emph{harmony} for polyphonic sounds. The pitch of harmonic sounds can be shifted, that is transposing the note and its height. Harmonising a sound means mixing this with several pitch-shifted version of it to obtain specific chords. Pitch shifting consists in scaling the frequency axis of a time-frequency representation of the sound. When a harmoniser is based on several pitch shifter engines, any of this controlled by the input pitch and the harmonic context, it's called \emph{smart} harmony or \emph{intelligent} harmonisation. To achieve this kind of audio effects, an algorithm for pitch estimation is needed.
+}
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+\acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+This work was written over a period of some months. This is the first time I attempt on a project of such a complexity. Many of the concepts and the subjects of this work were completely new to me. I learned to write in a programming language as C++, learned to use several softwares. I started thinking in a more logical way and that will help me in non-musical fields. Undoubtedly, it has been an educational path rather than a final project. It's a starting point for what I'm to going to do in the future, or for what I would like to do. I hope for possible collaborations that will help me to continue in this research and will allow a more precise and deeper knowledge of what is necessary to this project.
+
+I am profoundly indebted to many generous people for their numerous suggestions. First, my Supervisor Carmine-Emanuele Cella, for his precious time, and big effort. He made me widen my mind, and see the unknown. I'll keep all his influences for years. I would like to thank Lorenzo Pagliei, my main teacher at GRAIM, for his dedication to the Bachelor course. I'd like to thank Davide Tiso for every tip and for the ambition and perseverance I learned from him. I'd also like to thank my classmates: they made our class a very comfortable place where I spent some of the best moments of these past years. I should thank Marzia, who read all this draft and carefully gave me some suggestions to improve the language. I'd like to thank all my professors, and all the people who walked along with me during this time for their patience, comprehension and love, in particular Alessia and my brothers InSpiral. But above all, I should thank my family for giving me the freedom to lead my life.
+}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+\lhead{\emph{Contents}} % Set the left side page header to "Contents"
+\tableofcontents % Write out the Table of Contents
+
+\lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
+\listoffigures % Write out the List of Figures
+
+\lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
+\listoftables % Write out the List of Tables
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Return the line spacing back to 1.3
+
+\pagestyle{empty} % Page style needs to be empty for this page
+
+\dedicatory{For Emily, whenever I may find her\par
+\footnotesize Simon \& Garfunkel} % Dedication text
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2} 
+\input{Chapters/Chapter3}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\input{Appendices/AppendixA}
+\input{Appendices/AppendixB}
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}
+
+\lhead{\emph{Bibliography}} % Change the page header to say "Bibliography"
+
+\bibliographystyle{unsrtnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+
+\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\nocite{*}
+
+\clearpage
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT (ITA)
+%----------------------------------------------------------------------------------------
+
+\abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+
+Viene definita \emph{armonia} l'organizzazione delle altezze di un suono polifonico all'interno di un intervallo temporale. L'altezza di un suono armonico (inteso come suono scomponibile nelle sue componenti tramite la serie di Fourier) pu\`o essere trasportato. Questo avviene tramite la tecnica del \emph{pitch shifting}, ovvero la modifica del contenuto frequenziale di un segnale ottenuta moltiplicandolo per una \emph{ratio} specifica. In generale, un suono viene \emph{armonizzato} se ad esso vengono aggiunte differenti versioni trasportate al fine di generare un accordo. Si intende armonizzazione intelligente, o \emph{smart harmony}, un processo che tiene conto sia del contesto armonico sia del fondamentale del segnale. A tal scopo, \`e necessario l'utilizzo di un algoritmo per la stima della frequenza fondamentale del segnale.
+}
+
+\end{document}  

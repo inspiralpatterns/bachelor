@@ -1,0 +1,53 @@
+{
+	"pattrstorage" : 	{
+		"name" : "real-gran",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "Pensieri",
+				"data" : 				{
+					"live.numbox" : [ 1.0 ],
+					"live.numbox[1]" : [ 4182.549805 ],
+					"live.text" : [ 1.0 ],
+					"real-den" : [ 0.370079 ],
+					"real-freeze" : [ 0.0 ],
+					"real-gain" : [ 0.165354 ],
+					"real-max-len" : [ 1500.0 ],
+					"real-max-vol" : [ 0.9 ],
+					"real-min-len" : [ 400.0 ],
+					"real-min-vol" : [ 0.4 ],
+					"real-reverse" : [ 0.0 ],
+					"real-start" : [ 0.0 ],
+					"real-write" : [ 1.0 ],
+					"sigma" : [ 0.5 ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"name" : "Pensieri",
+				"data" : 				{
+					"live.numbox" : [ 3.0 ],
+					"live.numbox[1]" : [ 1329.677856 ],
+					"live.text" : [ 1.0 ],
+					"real-den" : [ 0.370079 ],
+					"real-freeze" : [ 0.0 ],
+					"real-gain" : [ 0.165354 ],
+					"real-max-len" : [ 1500.0 ],
+					"real-max-vol" : [ 0.9 ],
+					"real-min-len" : [ 400.0 ],
+					"real-min-vol" : [ 0.4 ],
+					"real-reverse" : [ 0.0 ],
+					"real-start" : [ 0.0 ],
+					"real-write" : [ 1.0 ],
+					"sigma" : [ 0.5 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<pattrstorage name = "plate-reverb[2]">
+	<slot number = "1" name = "plate-1">
+		<pattr name = "live.numbox" value = "" />
+		<pattr name = "live.slider" value = "" />
+		<pattr name = "live.slider[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "plate-balance" value = "0.314961" />
+		<pattr name = "plate-bandwidth" value = "940.944885" />
+		<pattr name = "plate-damp" value = "1807.08667" />
+		<pattr name = "plate-decay-1" value = "0.268504" />
+		<pattr name = "plate-decay-2" value = "0.777795" />
+		<pattr name = "plate-input-1" value = "0.731496" />
+		<pattr name = "plate-input-2" value = "0.307087" />
+		<pattr name = "plate-main" value = "1.433071" />
+		<pattr name = "plate-mod" value = "2.023622" />
+		<pattr name = "plate-pre" value = "300.787415" />
+		<pattr name = "plate-time" value = "0.078827" />
+	</slot>
+	<slot number = "2" name = "plate-2">
+		<pattr name = "live.numbox" value = "" />
+		<pattr name = "live.slider" value = "" />
+		<pattr name = "live.slider[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "plate-balance" value = "1." />
+		<pattr name = "plate-bandwidth" value = "1933.070923" />
+		<pattr name = "plate-damp" value = "531.496033" />
+		<pattr name = "plate-decay-1" value = "0.646614" />
+		<pattr name = "plate-decay-2" value = "0.484567" />
+		<pattr name = "plate-input-1" value = "0.260787" />
+		<pattr name = "plate-input-2" value = "0.307087" />
+		<pattr name = "plate-main" value = "0.425197" />
+		<pattr name = "plate-mod" value = "3.637795" />
+		<pattr name = "plate-pre" value = "0." />
+		<pattr name = "plate-time" value = "0.598408" />
+	</slot>
+	<slot number = "3" name = "short">
+		<pattr name = "live.numbox" value = "" />
+		<pattr name = "live.slider" value = "" />
+		<pattr name = "live.slider[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "plate-balance" value = "1." />
+		<pattr name = "plate-bandwidth" value = "590.551147" />
+		<pattr name = "plate-damp" value = "1511.811035" />
+		<pattr name = "plate-decay-1" value = "0.36496" />
+		<pattr name = "plate-decay-2" value = "0.314803" />
+		<pattr name = "plate-input-1" value = "0.47685" />
+		<pattr name = "plate-input-2" value = "0.191339" />
+		<pattr name = "plate-main" value = "0.641732" />
+		<pattr name = "plate-mod" value = "1.968504" />
+		<pattr name = "plate-pre" value = "334.64566" />
+		<pattr name = "plate-time" value = "0.3" />
+	</slot>
+	<slot number = "4" name = "infinite">
+		<pattr name = "live.numbox" value = "4." />
+		<pattr name = "live.slider" value = "0.000796" />
+		<pattr name = "live.slider[1]" value = "1." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "plate-balance" value = "1." />
+		<pattr name = "plate-bandwidth" value = "793.7" />
+		<pattr name = "plate-damp" value = "1081.889771" />
+		<pattr name = "plate-decay-1" value = "0.736897" />
+		<pattr name = "plate-decay-2" value = "0.765449" />
+		<pattr name = "plate-input-1" value = "0.72841" />
+		<pattr name = "plate-input-2" value = "0.811748" />
+		<pattr name = "plate-main" value = "0.619685" />
+		<pattr name = "plate-mod" value = "1.220472" />
+		<pattr name = "plate-pre" value = "500." />
+		<pattr name = "plate-time" value = "0.778495" />
+	</slot>
+	<slot number = "5" name = "unreal-2">
+		<pattr name = "live.numbox" value = "5." />
+		<pattr name = "live.slider" value = "0.000796" />
+		<pattr name = "live.slider[1]" value = "1." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "plate-balance" value = "1." />
+		<pattr name = "plate-bandwidth" value = "1833.07019" />
+		<pattr name = "plate-damp" value = "1081.889771" />
+		<pattr name = "plate-decay-1" value = "0.489968" />
+		<pattr name = "plate-decay-2" value = "0.765449" />
+		<pattr name = "plate-input-1" value = "0.72841" />
+		<pattr name = "plate-input-2" value = "0.086394" />
+		<pattr name = "plate-main" value = "0.619685" />
+		<pattr name = "plate-mod" value = "1.220472" />
+		<pattr name = "plate-pre" value = "0." />
+		<pattr name = "plate-time" value = "0.18019" />
+	</slot>
+	<slot number = "6" name = "unreal-2">
+		<pattr name = "live.numbox" value = "6." />
+		<pattr name = "live.slider" value = "0.000796" />
+		<pattr name = "live.slider[1]" value = "1." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "plate-balance" value = "1." />
+		<pattr name = "plate-bandwidth" value = "1833.07019" />
+		<pattr name = "plate-damp" value = "1081.889771" />
+		<pattr name = "plate-decay-1" value = "0.489968" />
+		<pattr name = "plate-decay-2" value = "0.765449" />
+		<pattr name = "plate-input-1" value = "0.72841" />
+		<pattr name = "plate-input-2" value = "0.086394" />
+		<pattr name = "plate-main" value = "0.619685" />
+		<pattr name = "plate-mod" value = "1.220472" />
+		<pattr name = "plate-pre" value = "0." />
+		<pattr name = "plate-time" value = "0.18019" />
+	</slot>
+</pattrstorage>
+

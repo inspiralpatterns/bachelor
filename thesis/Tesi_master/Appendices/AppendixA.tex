@@ -1,0 +1,20 @@
+% Appendix A
+
+\chapter{Source code} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix A. \emph{Source code}} % This is for the header on each page - perhaps a shortened title
+
+Here are presented, for documentation, the codes of the two realised algorithms, pitchdetect$\sim$ and dlshift$\sim$.
+Both of them are included in the header file \emph{dsp.h} and are the core of their own MSP externals.
+
+All this codes are written using C++ programming language.
+\newline
+\newline
+\newline
+\section{AMDF-based pitch detection}
+\lstinputlisting[caption=AMDF-based pitch detection]{Code/amdf.cpp}
+\null\vfill
+\section{Delay-line base pitch shifting}
+\lstinputlisting[caption=Delay-line base pitch transposition]{Code/dlshift.cpp}

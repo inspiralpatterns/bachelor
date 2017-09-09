@@ -1,0 +1,151 @@
+% Chapter 1
+
+\chapter{Project overview} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter 1. \emph{Project overview}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+\label{sec:intro}
+
+The entire work mentioned hereafter is based on the study of possible ways in which a monophonic signal can be harmonised.
+In particular it'll be examined the class of \emph{pitch shifters}, from the old Eventide H910 Harmonizer through a vast amount of algorithms based both on time and frequency approach. They usually are used in processes of sound manipulation for transposing the pitch of an audio source, e.g. pitch shifting.
+
+The algorithm chosen to make pitch shifting in this project is based on delay-lines continue modulations \cite{lazzarini2010audio}. This method, however, doesn't allow for a timbre preservation \cite{zolder2011dafx} and modify the original signal in a significant way. 
+One of the aim of this work is to give the user several possibilities to harmonise the audio source in the most natural and musical way. In order to get this, this \emph{Intelligent Harmonizer} uses a pitch estimation algorithm to choose a chord in relation to what degree scale the source is. The user is given the control about choice of the root key and the harmonisation mode.
+
+The instrument is completely developed in Max. The pitch shifting engine allows to select between different algorithms, and so does the pitch detection engine. The external MSP objects (pitchdetect$\sim$ and dlshift$\sim$) are developed by the Author, together with the Supervisor, and are shown later in \ref{Chapter2}.
+\clearpage
+
+\section{State of the Art}
+\subsection{Pitch Shifting}
+\label{art1}
+Some sound transformations are combinations of time-domain and frequency-domain manipulation. 
+In general, when a sound is altered in time, some modification in frequency occurs. If we want to double the duration of a sound, its pitch will be a half of the original one, and viceversa. So, how to change or shift the pitch of a sound without altering its duration? The technique involved in this process is called \emph{pitch shifting}. As said in \cite{zolder2011dafx}:
+\begin{quote}
+\scriptsize pitch shifting is the multiplication of every frequency by a transposition factor (i.e., the magnitude spectrum is scaled)
+\end{quote}
+
+Pitch changing and pitch estimation can be realised by several means, with different degrees of success. 
+For instance, in \cite{laroche2003phase}, it's said that pitch shifting
+\begin{quote}
+\scriptsize may be used in audio processing, such as in music synthesis, where the original pitch of musical sounds of a known duration may be shifted to form higher or lower pitched sounds of the same duration.
+\end{quote}
+To get this aim, there are several approaches both in time domain and in frequency domain. Their description is presented in this subsection.
+
+\subsubsection{Time-based approaches}
+\label{subsec:time}
+
+\textbf{The \emph{Harmonizer}.}
+The first commercial digital device that was based purely on time-domain techniques was the Eventide H910. It was released in the middle of 1970s and, since there, this kind of effect has become very popular \cite{roads1996tutorial}. It consists of a real-time transposition of an incoming signal without altering its duration. Eventide called its device \emph{Harmonizer} so, at the present time, every device that resembles the manipulation of pitch is generally called this way (or \emph{pitch shifter} just because Harmonizer is a trade mark of the Eventide company).
+
+The main limitation of the use of the harmonizer is the characteristic quality that it gives to the processed sounds \cite{zolder2011dafx}. The sound quality of a harmonizer is based mainly on the nature of the input signal and on the ratio of pitch change it is asked to perform. For the transposition of the order of a semitone, no objectionable alteration is heard. As the transposition ratio grows toward its extreme values, generally $\pm$2 octaves, the timbre of the sound obtains the character that is specific to the harmonizer. Moreover, some commercial devices produce undesirable side effects (such as buzzing and glitches) when used on critical material, such as vocal sounds.
+
+\textbf{Pitch shifting by resampling.}
+This technique is based on the effect of the analog audio tape recorders. In fact, variable speed replay leads to a compression/expansion of the spectrum of a signal. Particularly, during the faster playback the pitch of a sound is raised and during the slower playback the pitch is lowered \cite{zolder2011dafx}. A dual operation in the digital domain corresponds to a sample-rate conversion, i.e. \emph{resampling} the signal \cite{roads1996tutorial}. This is essentially the pitch variation technique used in the \emph{wavetable} synthesis - reading the table at higher speeds produces a higher pitch.  
+
+In a digital audio system, samples are skipped or doubled in resampling. The number of samples that are skipped is proportional to the amount of pitch shifting specified. The process of skipping samples in resampling is called \emph{decimation} and allows for upward transpositions. On the other hand, downward transpositions are achieved by creating new intermediate samples between existing ones. This means \emph{interpolation} between samples. In particular, to pitch shift by a ratio $N/M$, we first interpolate by $M$ and then decimate by $N$. For example, to shift a sound up by perfect fourth (ratio interval: $4/3$) we first upsample and interpolate by a factor of 3, then downsample and decimate by 4.
+
+A side effect in applying this simple pitch shifting technique is that the sound duration is altered. In order to rescale the pitch-shifted sound to the original length, a time-stretching algorithm must be applied to it. Furthermore, decimation and linear interpolation can create some artefacts due to discontinuities between two disjoint samples so that a filtering stage is needed to partially remove aliasing. Moreover, all the features of the spectrum (and so, the \emph{formants}) are simultaneously scaled up or down\cite{zolder2011dafx}.
+
+\textbf{Pitch shifting by delay-line modulation.}
+Many audio effects are based on mixing the original signal with a copied and delayed version of it \cite{disch1999modulation}. In this case, a variation in reading the delay line produces a dynamic component that is perceived in frequency modulation. So, a continue variation of fixed amount produces a constant transposition of the pitch of a signal coming into the delay line \cite{lazzarini2010audio}.
+
+Generally speaking, a delay-line pitch shifter is based on an overlap-add scheme with \emph{at least} two different delay lines and does not require any fundamental frequency estimation. First, the signal is divided in small chunks (\emph{blocking} process). The chunks are copied into the delay lines and there are read faster or slower in order to obtain an upward or downward transposition. To produce a continuous signal output, two chunks are read simultaneously with a delay time equal to one half of the block length. Finally, a cross-fade block combines the output: when one chunk is at its end, the cross-fade function is at its zero \cite{zolder2011dafx}. This allows to remove possible click due to signal discontinuity at the edge of the block. Since we choose this method for our pitch-shifting engine implementation, more detailed description will be provided later in \ref{dlshift} and in \ref{delissue}.
+
+\textbf{Pitch shifting by Granular Synthesis.}
+Granular synthesis involves breaking an input signal into short duration units, e.g. the \emph{grains}. This is equivalent to the process of \emph{windowing} that occurs during the fast Fourier Transform \cite{roads1996tutorial}. 
+The main problem in granulation is that the waveform at the end of a grain may not match the waveform at the beginning of the next one. This makes digital granulation exhibit a periodic clicking sound caused by undesired splicing transients, that don't appear in the original waveform.
+For that reason, smooth envelopes should be applied to every grain to create a seamless crossfade between grains.
+
+\emph{Pitch Synchronous} granular synthesis (PGSG) is a better technique designed for the resynthesis (and the transposition too) of a sound that contains one or more formant regions in its spectra, such as vocals one. PSGS involves numerous operations. First, there's a \emph{pitch detection} stage that matches the exactly pitch-period of the incoming signal. This information is used to rescale in real-time the duration of the grain inside the granulator. So, if we have to increase or decrease the reading speed of a single grain for raising or lowering the sound, no alteration in spectral content is done. Pitch synchronisation implies that PGSG more correctly processes monophonic sounds. At each frame time, the system emits a grain that is overlapped and added with the previous. The delay between successive grains is called \emph{hopsize}. This particular process, called \emph{overlap-add} (OA), is implemented in the PSOLA technique. In fact, the PSOLA technique preserves the spectral envelope of a signal \cite{moulines1995non}. 
+
+\emph{Revoice} is a software developed by Carmine-Emanuele Cella that performs harmonization of human voices by PSGS. The author says that:
+
+\begin{quote}
+\scriptsize{the program can also produce harmonization effects and is based on synchronous granular synthesis and on other complex techniques to detect the pitch of a signal in realtime.
+}
+\end{quote}
+
+The use of this technique takes into account the possibility to maintain the timbre characteristics in each register during the transposition, for what is called \emph{constant timbre transposition}. The PSOLA technique is the dual operation to resampling in the time domain and can be conveniently used in pitch shifting a speech sound maintaining all its vowel identity \cite{zolder2011dafx}.
+
+\subsubsection{Frequency-based approaches}
+\label{subsec:freq}
+
+%the PV for both pitch estimation and pitch shifting
+\textbf{The Phase Vocoder.}
+The phase vocoder is a digital signal processing technique of great significance. Its principal aim is to separate temporal information from spectrum information to achieve possible independent modifications. In fact, the phase vocoder can perform very high-fidelity pitch transposition of such a different variety of sound sources. This signal processing algorithm can be categorised as \emph{analysis-synthesis} technique. The phase vocoder allows for both of these processes. Mathematically, these techniques take an input signal, analyse it and produce an output signal that can be equal to the original or a modified version of it \cite{dolson1986tutorial}. The parameter values derived from the input analysis can be altered in order to make a useful manipulation of the original signal. The phase vocoder is named so, to distinguish it from the earlier \emph{channel vocoder}. It was first described in an article by Flanagan and Golden \cite{flanagan1966vocoder}, but this techniques became popular only in the successive decades.
+
+The phase-vocoder analysis stage can be viewed in two complementary ways. 
+The former consists of a fixed bank of a \emph{bandpass filters} whose outputs are values that show time-varying \emph{amplitude} and time-varying \emph{frequency}. The frequency response of the filters is identical and the number of filters should be sufficient so that each filter describes one component of the signal. One important consideration is that the band edges could overlap each other. So, the aim is to get the sharpest filter cutoff with minimum overlap. The sharper the filter frequency response, the slower the filter responds to changes in input signal. 
+The complementary view consists of a succession of overlapping Fourier transforms in a finite-duration temporal window. Here, the number of filter bands is the number of frequency \emph{bins}. Since most of the signals existing in nature are not perfectly periodic, the Fourier series can be computed by the \emph{Short Time} Fourier transform, assuming that the windowed section repeats indefinitely and out of the window there's no signal. As in the filter interpretation the frequency response can vary the filter response to the signal, in the Fourier interpretation the shape of window influences how the signal spectrum is \emph{smeared} in other close bins. The amount of smearing increases as the window duration gets shorter. These perspectives are complementary because in the latter the attention is focused on the values for \emph{all} the frequency bins at a single instant time, as in the filterbank view the temporal succession of the values for a \emph{single} filter is emphasized. Finally, in either case it's necessary to convert from rectangular to polar coordinates in order to calculate time-varying values both of frequency and amplitude.
+
+This dual interpretation deals with two divergent and equal interpretation of resynthesis. A more recently interest on phase vocoder has focused on its ability to transform several typologies of sound in such a musical and useful ways. Here, the \emph{pitch transposition} technique is emphasized. 
+In fact, it's possible to change the pitch of a sound without altering its duration with the use of the phase vocoder technique. Specifically, it should \emph{time-scale} the FFTed signal by the pitch-change desired factor (e.g. \emph{pitch ratio}) and then play the buffer at a \emph{wrong} sampling rate. The example below, taken from Carmine-Emanuele Cella's \emph{microCoder} ver. 0.1, clarifies this process.
+\newline
+\begin{lstlisting}                     
+int hspect = fftlen * pitch;
+for (int i = 0; i < fftlen; ++i) {
+	int idx = ((int) i / pitch);
+	if (idx < hspect) {
+	    ampsyn[i] += amp[idx];
+	    freqsyn[i] = freq[idx] * pitch;
+	}
+}
+\end{lstlisting}
+A possible complication arises for wide shifts, e.g. an octave interval. In fact, pitch shifting process doesn't alter only the pitch, but also the frequency content so that, for instance, vocal sounds can be modified in their formantic regions characteristics. This causes important modifications both in the nature of sound and in its intelligibility, if speaking of speech signals. To remedy this issue, an additional operation should be inserted into the phase vocoder algorithm. This is a manipulation of the \emph{spectral envelope}. 
+
+Unfortunately, using phase vocoder to perform pitch shifting has undesirable side effects, as expressed in \cite{laroche2003phase}. In fact, if we're using time-scale modifications as described above, the phase vocoder can perform only one shift at a time and the computational cost is strictly related to the pitch modification factor. Furthermore, new techniques that allow for more flexible modifications has been developed. These operate solely in the frequency domain, bypassing the resampling stage, and are based on the idea of identifying peaks in the Fourier transform and then translating them to different arbitrary frequencies, allowing also non-linear pitch shifting \cite{laroche1999new}.
+
+\subsection{State of the Art: Pitch Detection}
+\label{art2}
+Nowadays, sound analysis has emerged as a central point in the development of musical technologies. Its importance allows for new and more subtle possibilities in sound transformation. Particularly, the concept of pitch has been proved crucial in many of processing techniques involved in any kind of sound. An application that attempts to find the \emph{fundamental frequency} from an input signal is called \emph{pitch detector} (PD), or pitch estimator. The concept of pitch is ambiguous itself, because the human perception is not completely understood yet, and what a user asks of a PD is quite difficult. 
+
+Numerous algorithms for pitch estimation has been developed. These are based both on time-domain and on frequency-domain approach, while others are hybrid approach. A complete description of this field falls outside the aim of the work. For that reason, we decided to describe only two algorithms in the following paragraphs. The choice focuses on ACF and AMDF, that are very related because the latter is a modified version of the former. We choose AMDF-based algorithm for our purpose because it's easy to implement and gives general efficiency without spending so much time. Moreover, AMDF based method exhibit less computational complexity than the ACF based one \cite{abdullah2009high}, even if ACF performs better in case of critical material or very noisy speech. 
+\newline
+Before treating the two selected algorithms, we should mention the most important pitch tracking algorithm of either categories. From time domain detection, we remind \emph{zero-crossing} method, well-described in \cite{roads1996tutorial}. In Roads, also the \emph{cepstrum analysis} is described. This method, together with the \emph{Harmonic Product Spectrum}, belongs to the frequency domain detection. We also should mention Yin, an algorithm for estimation of the fundamental frequency based on ACF with some modifications, mainly used on speech \cite{de2002yin}. A comparative study of several pitch detection algorithm is described in \cite{rabiner1976comparative}. Finally, in \cite{puckette1998real} a MSP object based on \emph{maximum-likelihood} detection method, fiddle$\sim$, is presented.
+
+Pitch detection may be a prelude to a pitch interpretation within a musical context, or a scalic one - and so it's the case of this Intelligent Harmonizer.
+
+\textbf{Autocorrelation pitch detection.}
+%what is the correlation function?
+Correlation function compares two signals. The aim of the correlation is to find the \emph{similarity} between these two considered signals. Correlation function compares signals on a point-by-point analysis; thus the output of a correlation is a signal itself. Generally speaking, if the correlation function is 1, the signals are equal in that point. If it is 0, then the two signals are uncorrelated \cite{roads1996tutorial}. 
+
+%ACF description
+\emph{Autocorrelation} means that the signal is compared with versions of itself delayed by an amount of successive intervals. The point of comparing a signal with a delayed version of itself is to find indicators of periodicity, like repeating patterns. When autocorrelation finds two identical samples in the two versions of the signal, then it can assume the signal is periodic with a period that is exactly the amount of delay from them. Autocorrelation pitch detectors hold part of the signal, storing it into a buffer. To do this, the signal is windowed and the windowed segment is compared with version of itself delayed by one sample, two samples, and so on up to $n$ samples, where $n$ is the buffer size. If the detector finds a match in the different patterns, this indicates periodicity in the signal. The detector measures the time interval between the two patterns, that is the delay amount value in samples too, and the strongest correlation (i.e. the maximum value from these that tend to be 1) is estimated as the \emph{fundamental} pitch. Obviously, there will not be so many autocorrelation values equal to 1 because every signal existing in nature is not perfectly periodic. In fact, we can speak of \emph{quasiperiodic} signals.
+
+Autocorrelation function (ACF) is one of the most basic pitch detection methods that have been used in a wide range of fields. Since the autocorrelation of a periodic signal is also a periodic signal \cite{tan2003pitch}, the period of the autocorrelation function \emph{reflects that of the input signal}. The ACF algorithm is defined as:
+\newline
+\begin{equation}
+\label{eq:acf} 
+ACF(\tau) = \frac{1}{N} \sum_{n = 0}^{N - 1} x(n)\cdot x(n - \tau)
+\end{equation}
+where $x(n)$ is the signal, $N$ is the length of $x(n)$ and is the total number of points involved in the calculation. $\tau$ is the delay or \emph{lag time} and it's defined in the range $0 \le \tau \le (N - 1)$.
+
+%AMDF pitch estimation
+\textbf{AMDF-based pitch detection.}
+The Average Magnitude Difference function (AMDF) is actually another kind of autocorrelation algorithm. It is a variation of the ACF analysis where, instead of correlating the input signal at various delays (where multiplication and summation are formed at each value), a function of differences is formed between the delayed signal and the original one and, at each delay value, the absolute magnitude is taken \cite{tan2003pitch}. So, the AMDF calculation requires no multiplication and this makes it more suitable for the real-time applications. The AMDF, in its original formula presented in \cite{ross1974average} is defined as:
+\newline
+\begin{equation}
+\label{eq:amdf} 
+AMDF(\tau) = \sum_{n = 0}^{N - \tau - 1} \mid x(n) - x(n - \tau) \mid
+\end{equation}
+\newline
+where $x(n)$ is the processed signal with the length $N$ and $\tau$ is the \emph{lag} number which ranges from $0$ to $N - 1$. As in the autocorrelation function, the signal is also exposed to the \emph{frame-blocking} technique. In practice, the signal is multiplied with a rectangular window of length $N$. This makes the signal null in every point outside the block. The pitch is defined for the minimum value of the difference function. The $\tau$ value that makes AMDF minimum is equal to pitch value.
+
+%AMDF issues and possible improvements
+The advantage of AMDF is the low computational complexity due to the transformation from multiplications to subtractions. However, AMDF contains two possible calculation errors. In Eq. \ref{eq:amdf} less data is involved to calculate AMDF at higher lags. Therefore AMDF cannot show periodic nature on the later half of the frame and it's often called \emph{falling tendency} in literature. AMDF can also present the so-called \emph{double pitch} error (or \emph{half pitch} error), that is the local minimum appearing at integer multiples of the true pitch, or at halves values \cite{muhammad2008noise}. Many strategies have been proposed in order to eliminate these undesired errors and many papers have been written; for instance, in \cite{zhang2002pitch} a new method based on circular AMDF is proposed, whereas in \cite{muhammad2008noise} and \cite{abdullah2009high} more robust AMDF algorithms are described.
+Moreover, a modified version of AMDF algorithm is also presented in this paper. 
+
+\section{Conclusion}
+\label{conclusion1}
+In this chapter, we presented an overview of the project and its final aims. We also described the state-of-art of both pitch shifting engines and pitch detection methods. For convenience, when treating pitch shifters, we distinguished between time-domain and frequency-domain approach. Later, we discussed the main methods in the field of pitch tracking. We gave a deeper description of AMDF algorithms, that we're going to improve and implement in the next chapter. We did not provide a more detailed description of these several alternatives. For more information about, the reader is suggested to refer to the referenced papers.
+
+
+
+
+
+

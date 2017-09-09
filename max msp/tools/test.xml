@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<pattrstorage name = "test">
+	<slot number = "1" name = "Sesso">
+		<pattr name = "cazzo" value = "31." />
+		<pattr name = "culo" value = "65." />
+		<pattr name = "figa" value = "83." />
+		<pattr name = "live.numbox[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "tette" value = "23." />
+	</slot>
+	<slot number = "2" name = "Miracolo">
+		<pattr name = "cazzo" value = "85." />
+		<pattr name = "culo" value = "97." />
+		<pattr name = "figa" value = "22." />
+		<pattr name = "live.numbox[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "tette" value = "82." />
+	</slot>
+	<slot number = "3" name = "la-topa-maiala">
+		<pattr name = "cazzo" value = "26." />
+		<pattr name = "culo" value = "127." />
+		<pattr name = "figa" value = "85." />
+		<pattr name = "live.numbox[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "tette" value = "127." />
+	</slot>
+	<slot number = "4" name = "trans">
+		<pattr name = "cazzo" value = "95." />
+		<pattr name = "culo" value = "127." />
+		<pattr name = "figa" value = "0." />
+		<pattr name = "live.numbox[1]" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "tette" value = "127." />
+	</slot>
+</pattrstorage>
+

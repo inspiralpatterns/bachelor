@@ -1,0 +1,211 @@
+% Chapter 1
+
+\chapter{Algorithm design} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter 2. \emph{Algorithm design}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+
+The aim of this chapter is to give the reader the most important information about the algorithms used in this work, their implementation and their specific differences relative to what has been already said in \ref{Chapter1}.
+
+Research has been conducted this way: first of all, it has been examined all the literature about a specific technique; then, an own implementation has been done in C++. So it has been produced two main codes: one for the pitch detection, the other for the pitch shifting. These codes, specifically, represent the engines of the relative MSP externals presented here. Before introducing these codes within the tools provided by \emph{Max SDK} (the Cycling 74's Software Developer Kit) in order to build these externals, a command-line version of the codes is made, so to test and improve them easily. Finally, Xcode 6 has been used to realise an \textbf{.mxo} object that will be recalled inside the Max 6 patcher built by the Author and the Supervisor together.
+\clearpage
+
+\section{Fundamental decisions}
+%perché algoritmo AMDF e non altro?
+%perché median filter?
+An AMDF-based algorithm for pitch estimation has been chosen because it better suits to the requests of the Intelligent Harmonizer, that are working in real-time and with a small computation cost. In order to prevent and eliminate the problems involved with the use of this technique, several improvements are proposed inside the algorithm. Moreover, it's been added a \emph{median-filter} section after the pitch detection stage to smooth undesired and too fast frequency changes due to the limits of this technique and to the possible issues of the signal. 
+
+%perché algoritmo pitch shift?
+To achieve pitch transposition, delay-lines based pitch shifter sums up a certain simplicity in the implementation of its code, together with a low cpu amount and a good sound quality - it doesn't require many improvements. Furthermore this approach allows to process the sound without switching to frequency-based domain, as it's the case of the phase vocoder instead. 
+
+\section{Implementation}
+\subsection{Pitchdetect$\sim$}
+\label{pitch}
+First, the input signal is passed through a low pass filter to improve the accuracy of this technique \cite{rabiner1976comparative} (and also to cut off a part of the spectrum not useful for the pitch estimation). Then the AMDF algorithm takes place, as shown in the following listing:
+\newline
+\begin{lstlisting}
+for (int n = 0; n < N2; ++n) {
+		float diff = 0;
+		rms += (buffer[n] * buffer[n]);
+		for (int m = 0; m < N2; ++m) {
+			diff += fabs (buffer[m] - buffer[m + n]);
+		}
+		diff *= pow (n, coeff);
+		amdf[n] = diff;
+		if (maxAmdf < diff) maxAmdf = diff;
+	}
+	
+\end{lstlisting}
+
+%1. modifiche all'algoritmo classico
+We might observe an important revision of the classic algorithm implementation shown in \cite{ross1974average, ying1994probabilistic, zhao2013amdf, muhammad2008noise}. Unlike traditional AMDF, this version computes two independent loops, one internal to the other. These loops count from zero to half buffer. So, herein, we could suppose the range in which the difference is calculated, isn't the whole buffer length. Despite this supposition, all the buffer samples are taken into account to compute the minimum difference. In fact, while the external loop increases the value of $n$, the internal one increases $m$. So, for instance, when $n = N2 - 1$ (e.g. half buffer) the range of $[m + n]$ varies from $N2 - 1$ to $N - 1$. We have \emph{in any case} a full comparison within the buffer. This strategy shorten the time in which the computation is done, allowing for better real-time performance without wasting cpu resources.
+
+%2. scelta di treshold, bias e confidence
+\textbf {Threshold and Bias.}
+We might notice a specific parameter in the listing above: \emph{coeff}. What does it mean? It has been previously said that AMDF technique suffers from possible falling tendency \cite{muhammad2008noise}. This explains why sometimes the frequency estimated is lower, compared to the expected one. One possible solution is to partially modify the result of summation by well averaging the lag values. In this work, \emph{coeff} means how much the values are averaged. Because \emph{coeff} is the exponent, its right values shouldn't be less than 1. For coeff = 1, the difference value remains the same calculated by AMDF. If we increase this value, we raise the difference value and, obviously, the entire summation. 
+This parameter, inside the external structure, is called \emph{bias}.
+\newline
+\begin{lstlisting}
+int minLag = (1. / maxF0) * sr;
+	int maxLag = (1. / minF0) * sr;
+
+	if (rms < threshold) return 0;
+\end{lstlisting}
+
+As shown in the listing above, the parameter \emph{threshold} defines when the input signal has to be considered as silence or as sound. The higher the threshold value, the less the estimated values that pitchdetect$\sim$ outputs. In fact, at the same time pitch detection is done, the algorithm also computes the RMS (\emph{root mean square}, that is the energy of the signal) on the entire buffer. If this RMS value is less than the threshold one, supposed the energy value is given in linear amplitude, the system will output a zero value: no fundamental frequency is given because there's no harmonic sound in the signal.
+
+\textbf{The absolute minimum.}
+First of all, the research of the minimum difference is limited inside a specific range, whose side values are given by the user. These are called \emph{min} and \emph{max frequency}. The user should keep in mind that this algorithm, as almost every detection algorithm, could exhibit some issue at its extreme values, so to select an accurate range. For instance, a more precise detection of a 100 Hz fundamental could't be made if the \emph{min frequency} parameter is set to the same value. 
+\clearpage
+\begin{lstlisting}
+for (int i = minLag + 1; i < maxLag - 1; ++i) { //safety
+		if (amdf[i] < amdf[i - 1] && amdf[i] < amdf[i + 1]) {
+			minimaPos[currentMinimum] = i;
+			minima[currentMinimum] = amdf[i];
+			++currentMinimum;
+ 		} 
+	}  
+\end{lstlisting}
+
+In this stage of the research, every AMDF value previously calculated (whose index is in the range determined by the user) is compared with the one before and the one after. If this value is the lowest, then we have a local minimum. Its value and its position (i.e. the samples at which we have the minimum) are stored. 
+\newline
+\begin{lstlisting}
+	for (unsigned int i = 0; i < currentMinimum; ++i) {
+		if (minima[i] < min) {
+			min = minima[i];
+			index = i; 
+		}
+	}
+\end{lstlisting}
+
+Next, all the local minimum are compared each other to get the absolute minimum and, in particular, its sample position. In fact, the \emph{index} found refers to the array of indexes \emph{minimaPos}. The value that pitchdetect$\sim$ outputs is $sr / minimaPos[index]$, where \emph{sr} is the sampling rate - that is, a value in Hertz that corresponds to the fundamental frequency for the examined buffer of input signal.
+
+
+\subsection{Dlshift$\sim$}
+\label{dlshift}
+%1. descrizione e references
+Dlshift stands for \emph{delay-line} shifting.
+This approach leads to a quite simple implementation and requires no large CPU resources to let a multiple utilisation possible.
+
+%pitch shifting tramite phasor~
+\textbf{Circular buffers.}
+Generally speaking, the pitcher effect is created by increasing or decreasing the delay by a fixed amount \cite{lazzarini2010audio}. If looked from a different view, we could think of it as a circular delay line constantly re-written, as it was a wavetable. The term \emph{circular} means that the reading and the writing point of the the delay line are dynamics, changing their position along the line itself. This allows to keep the length of the buffer quite short in order to let the user not to perceive a significant delay of the processed sound relative to the original one. This leads to an important consideration: there always will be a little amount of delayed signal that gives the Harmonizer the classic \emph{phasing} effect \cite{zolder2011dafx}.
+
+The delay reading point then proceeds through the line with an increment that reflects the desired pitch transposition rate. If its position increment is 1, there's no pitch transposition - and then, no delay change. If the increment is major than 1, we're playing the delay line at a faster rate than the rate at which it was written, so to have an upward transposition. Conversely, if the increment is between 0 and 1 the pitch is shifted downward.   
+
+\textbf{Main features.}
+In this implementation, pitch shifting is achieved using two time-varying delay lines. The continue modulation is provided by a sawtooth-type function \cite{zolder2011dafx}. For its similarity to the relative MSP object, this is called \emph{phasor} to remind the principle on what the \emph{phasor$\sim$} is based, that is to generate a sawtooth function expressed in Hz. So, it's required to allocate externally a one-second length buffer to write a sawtooth function in. The length of this buffer depends on the sampling rate of the system. The rate at which the sawtooth function is played is given by the different increment of the reading index of the table. One of the parameters the user is asked to input at the MSP external initialisation, \emph{phasor frequency}, is exactly how much the reading index has to move forward every loop step in order to achieve the desired transposition rate.
+
+Here is the central point of shifter code.
+\newline
+\begin{lstlisting}
+out = (frac * D1[next] + (1.0 - frac) * D1[rpi]) * x; 
+		out += ((frac2 * D2[next2] + 
+			(1.0 - frac2) * D2[rpi2])) * (1 - x);
+		D1[(int)wptr] = sig[n];
+		D2[(int)wptr] = sig[n];
+		outbuffer[n] = out;
+		
+		++wptr;
+		wptr %= dt;
+        	tablePos += (pf);
+        	if(tablePos < 0.) tablePos += len;
+        	if (tablePos >= len) tablePos -= len;
+\end{lstlisting}
+
+This is included in a main loop that also contains the calculation of \emph{phasor}, \emph{cosine} and \emph{reading point} values. The conditions of this loop are: for $n = 0; n < N; ++n$, where $N$ is the vector size length. We might notice how the algorithm works doing these actions in the following order \cite{lazzarini2010audio}: 
+\begin{enumerate}
+\item both the delay lines are read at their current reading position and summed up together to generate the output;
+\item the input signal is written that position on every buffer;
+\item the reading positions are incremented.
+\end{enumerate}
+
+In particular, the algorithm always checks if the reading point has reached the end of the delay line. In fact, we should keep in mind that the vector size is generally smaller than the delay line - this time, we choose a 50 ms long delay line. It needs the writing position index to be saved before a new buffer of audio signal comes in, so to resume the count during the successive loop. To do that, we pass to the function a \emph{reference} value, and so does for the reading position index of the phasor table. In other words, we are passing the variable itself and not a copy of it and the last value is always kept inside the memory location until it's cleared. Then, the modulus operation guarantees that the variable \emph{wptr} never overcomes the maximum value of delay time (\emph{dt}).
+
+%interpolazione lineare
+\textbf{Linear interpolation.}
+Analogous, but slightly different, is the matter of the increment of the phasor table. Here, we could have a non-integer increment due to the fractional \emph{phasor frequency} value. So how to calculate correctly the value from a table that accepts \emph{only integer} indexes?
+\newline
+\begin{lstlisting}
+tableFloor = floor (tablePos);
+tableFrac = tablePos - (float) tableFloor;
+tableNext = (tableFloor + 1 == len? 0 : tableFloor + 1);
+phasor_value = (1. - tableFrac) * table[(int) tableFloor] +
+			tableFrac * table[tableNext];
+\end{lstlisting}
+
+The answer is the linear interpolation, and its formula is:
+\begin{equation}
+(1 - frac) \cdot x + frac \cdot (x + 1)
+\end{equation}
+\newline
+Practically, a linear interpolation makes sense only if we consider two integer values at a time. These are the operations requested:
+\begin{enumerate}
+\item calculate the maximum integer value that is not greater than the fractional one (in this case, we're using the C++ \emph{floor} function);
+\item calculate the fractional part of the original value;
+\item focus on the integer value next to the one we have already calculated and check if it falls inside the phasor buffer;
+\item now, it's possible to do linear interpolation.
+\end{enumerate}
+
+All the values involved in linear interpolation let the algorithm calculate the other required variables in the loop: the reading position indexes (through \emph{phasor\_value}) and the cosine value corresponding to the phasor table position.
+
+\section{Issues}
+In the following section, the main issues observed during the implementation stage are briefly shown. A possible solution, or a discussion for a future improvements will be provided. Some of this enhancements take their name from similar parameters that Cella's \emph{Revoice} exhibits.
+
+%1. vector size issues and downsampling
+\subsection{Vector size issues and \emph{downsampling}}
+One of the main problems of both implementations is that they don't have \emph{fixed} vector size values inside. 
+This characteristic initially could not represent such a hard problem but changing the vector size from the Max \emph{Audio Setup} window while the algorithm is working can cause undesired clicks, loss of data and, in some cases, it can suddenly stop working.
+To fix this, we could think of a buffer independence.
+First, we could declare a constant called \emph{internal\_buffer\_size} and give it an average value that best suits any case. For any vector size value selected externally, it could be calculated the algorithm's \emph{downsampling} factor, that is how many buffers the system has to input to completely fill its internal one. Once the internal buffer is filled with signal, the process - whatever it is - can take place.
+
+%2. confidence
+\subsection{The \emph{Confidence} parameter}
+The pitch detection algorithm described before exhibits, in some critical situation, undesired values that make us not very \emph{confident} about their possible use. In particular, when used with vocals or non-tempered instruments it may be output all the pitch-period fluctuation, resulting in microtonal pitch. That's truly correct, but it may give us some problems in using these non-tonal values, for instance in calculating the interval between this note and a root key note. 
+
+Pitchdetect$\sim$ gives the user a parameter to control these possible undesired values, and this is called \emph{confidence}. In practice, this acts like a pseudo-ratio semitone value. Two separate frequency values are calculated with confidence one, \emph{minpitch} and \emph{maxpitch}. Then, the last detected frequency is compared with these ones. If this value stays between the smaller and the greater, no \emph{tonal} change in pitch happened in the signal. So, the algorithm doesn't output the the last pitch-period but the previous one and so does until the last detected value falls out of this range. All the process is shown in the listing below.
+\newline
+\begin{lstlisting}
+float minpitch = m_oldpitch / m_ratio;
+float maxpitch = m_oldpitch * m_ratio;
+if ((m_pitch > maxpitch || m_pitch < minpitch) || m_oldpitch == 0) {
+	m_oldpitch = m_pitch;
+}
+\end{lstlisting}
+
+%3. median filter
+\subsection{Using a \emph{median filter}}
+In order to prevent too fast pitch-period changes, not useful if we're using them in tracking some else musical parameter, pitchdetect$\sim$ has been provided with a median filter to smooth the output values curve. It's more likely we're interesting in a well-balanced pitch estimation through audible time segments rather than a more precise estimation at every vector size. Generally speaking, the more a parameter is recognised to belong to the human sphere, the more impressive its musical result will be.
+\newline
+\begin{lstlisting}
+for (int i = 0; i < MEDIANSIZE; ++i){
+                m_median[i] = m_amdf_tmp[i];
+}
+bsort (m_median, MEDIANSIZE);
+m_pitch = m_median[MEDIANSIZE / 2];
+\end{lstlisting}
+
+Typically used on signals that may contain outliers skewing the values we're waiting for, a median filter takes a list of $N$ values, sorts this in an increasing order and, finally, returns the middle value \cite{devillard1998fast}. From that, a median filter allows a smoother distribution. The only cost is a delay of $N$ vector sizes before it returns the first real value. In fact, it has to wait that all the array designated to be filtered is filled to obtain the first significant value. Moreover, as shown in the listing above, we should create a \emph{copy} of this array to let the pitch output order not be altered from sort operation. The length of this array is chosen out of the algorithm and generally is an odd number.
+
+%4. de-clicking in pitch shifter?
+\subsection{De-clicking and modulation in pitch shifting}
+\label{delissue}
+We said that the delay line is finite and circular. So, at some point, either the reading point will overtake the writing point or vice versa \cite{lazzarini2010audio}. This may happen because the reading tap is moving with a different increment than the writing one, that is the reading taps is moving through the buffer at its own rate. This will create audible popping sounds and a nasty click in the signal when the sawtooth comes back from its end to its beginning. The best way to avoid the click is to add an envelope (sometimes called a \emph{window}) that goes to zero at that discontinuity. This can be, as it is in the case of this work, a cosine shape, going from 0 at its end to 1 in the middle. 
+
+However, the signal is now de-clicked but with an important modulation. The sound periodically disappears when the envelope goes to zero. In order to reduce this \emph{tremolo-like} effect, which is generally undesirable, we can use a second reading point (or, better, a second delay line with its own reading point) that is offset by half a delay length, and enveloped in the same way. So, when one tap is at its discontinuity point (and thus its amplitude is zero), the other tap is at its maximum amplitude. This results in a smoother output, with no click and less disturbing amplitude modulation. The cosine shape curve fits naturally any possible amplitude fluctuation due to the \emph{crossover} stage. This methods comes from the old 2-tap pitch shifter implementation in devices like Eventide H910 and H949. The use of several reading taps, or several delay lines, is perceived as a phasing-like effect artifact that is less annoying anyway \cite{zolder2011dafx}.  
+
+
+
+\section{Conclusion}
+This chapter has provided a detailed presentation of both the MSP externals built in this work. The main features of pitch detection stage and pitch shifting process have been explained. Later, it has been presented several issues that the Author and the Supervisor have passed through. In particular, we focused on possible issues that AMDF algorithms can exhibit when performing on complex material (i.e. speech or very noisy signal). In those cases, pitch-period values could be wrong or different to what we expected. Moreover, we said that the quality of pitch shifting sound can be altered by some undesired sounds, as periodic clicks. At the present time, our pitch shifting implementation is still presenting some artifacts due to possible errors in algorithm implementation. Surely, its sound quality could be improved using a frequency domain technique, as the phase vocoder \cite{laroche1999new}.
+Many of the issues described herein have been fixed, others will be surely dealt with in a future.
+
+
+
+
+
+
+

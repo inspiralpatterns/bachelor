@@ -1,0 +1,200 @@
+\begin{thebibliography}{32}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Lazzarini and Boulanger(2010)]{lazzarini2010audio}
+Victor Lazzarini and Richard Boulanger.
+\newblock \emph{The Audio Programming Book}.
+\newblock MIT Press, 2010.
+
+\bibitem[Z{\"o}lzer(2011)]{zolder2011dafx}
+Udo Z{\"o}lzer.
+\newblock \emph{Digital Audio Effects, 2nd Edition}.
+\newblock Wiley, 2011.
+
+\bibitem[Laroche and Dolson(2003)]{laroche2003phase}
+J.~Laroche and M.~Dolson.
+\newblock Phase-vocoder pitch-shifting, April~15 2003.
+\newblock URL \url{http://www.google.com/patents/US6549884}.
+\newblock US Patent 6,549,884.
+
+\bibitem[Roads(1996)]{roads1996tutorial}
+Curtis Roads.
+\newblock \emph{The Computer Music Tutorial}.
+\newblock MIT Press, 1996.
+
+\bibitem[Disch and Z{\"o}lzer(1999)]{disch1999modulation}
+Sascha Disch and Udo Z{\"o}lzer.
+\newblock Modulation and delay line based digital audio effects.
+\newblock \emph{2nd Workshop on Digital Audio Effects DAFx, Proceedings of},
+  1999.
+
+\bibitem[Moulines and Laroche(1995)]{moulines1995non}
+Eric Moulines and Jean Laroche.
+\newblock Non-parametric techniques for pitch-scale and time-scale modification
+  of speech.
+\newblock \emph{Speech communication}, 16\penalty0 (2):\penalty0 175--205,
+  1995.
+
+\bibitem[Dolson(Winter, 1986)]{dolson1986tutorial}
+Mark Dolson.
+\newblock The phase vocoder: A tutorial.
+\newblock \emph{Computer Music Journal}, Vol. 10\penalty0 (No. 4):\penalty0 pp.
+  14--27, Winter, 1986.
+
+\bibitem[Flanagan and Golden(1966)]{flanagan1966vocoder}
+James~L Flanagan and RM~Golden.
+\newblock Phase vocoder.
+\newblock \emph{Bell System Technical Journal}, 45\penalty0 (9):\penalty0
+  1493--1509, 1966.
+
+\bibitem[Laroche and Dolson(1999)]{laroche1999new}
+Jean Laroche and Mark Dolson.
+\newblock New phase-vocoder techniques for pitch-shifting, harmonizing and
+  other exotic effects.
+\newblock \emph{Applications of Signal Processing to Audio and Acoustics, 1999
+  IEEE Workshop on}, pages 91--94, 1999.
+
+\bibitem[Abdullah-Al-Mamun et~al.(2009)Abdullah-Al-Mamun, Sarker, and
+  Muhammad]{abdullah2009high}
+K~Abdullah-Al-Mamun, F~Sarker, and G~Muhammad.
+\newblock A high resolution pitch detection algorithm based on amdf and acf.
+\newblock \emph{Journal of Scientific Research}, 1\penalty0 (3):\penalty0
+  508--515, 2009.
+
+\bibitem[De~Cheveign{\'e} and Kawahara(2002)]{de2002yin}
+Alain De~Cheveign{\'e} and Hideki Kawahara.
+\newblock Yin, a fundamental frequency estimator for speech and music.
+\newblock \emph{The Journal of the Acoustical Society of America}, 111\penalty0
+  (4):\penalty0 1917--1930, 2002.
+
+\bibitem[Rabiner et~al.(1976)Rabiner, Cheng, Rosenberg, and
+  McGonegal]{rabiner1976comparative}
+Lawrence Rabiner, Md~Cheng, Aaron~E. Rosenberg, and C.~McGonegal.
+\newblock A comparative performance study of several pitch detection
+  algorithms.
+\newblock \emph{Acoustics, Speech and Signal Processing, IEEE Transactions on},
+  24\penalty0 (5):\penalty0 399--418, 1976.
+
+\bibitem[Puckette et~al.(1998)Puckette, Apel, et~al.]{puckette1998real}
+Miller Puckette, Theodore Apel, et~al.
+\newblock Real-time audio analysis tools for pd and msp.
+\newblock 1998.
+
+\bibitem[Tan and Karnjanadecha(2003)]{tan2003pitch}
+Li~Tan and Montri Karnjanadecha.
+\newblock Pitch detection algorithm: autocorrelation method and amdf.
+\newblock 2003.
+
+\bibitem[Ross et~al.(1974)Ross, Shaffer, Cohen, Freudberg, and
+  Manley]{ross1974average}
+M~Ross, H.~Shaffer, Andrew Cohen, Richard Freudberg, and H.~Manley.
+\newblock Average magnitude difference function pitch extractor.
+\newblock \emph{Acoustics, Speech and Signal Processing, IEEE Transactions on},
+  22\penalty0 (5):\penalty0 353--362, 1974.
+
+\bibitem[Muhammad(2008)]{muhammad2008noise}
+Ghulam Muhammad.
+\newblock Noise robust pitch detection based on extended amdf.
+\newblock \emph{Signal Processing and Information Technology, 2008. ISSPIT
+  2008. IEEE International Symposium on}, pages 133--138, 2008.
+
+\bibitem[Zhang et~al.(2002)Zhang, Xu, and Wang]{zhang2002pitch}
+Wenyao Zhang, Gang Xu, and Yuguo Wang.
+\newblock Pitch estimation based on circular amdf.
+\newblock \emph{Acoustics, Speech, and Signal Processing (ICASSP), 2002 IEEE
+  International Conference on}, 1:\penalty0 341--344, 2002.
+
+\bibitem[Ying et~al.(1994)Ying, Jamieson, and Mitchell]{ying1994probabilistic}
+Goangshiuan~S Ying, Leah~H Jamieson, and Carl~D Mitchell.
+\newblock A probabilistic approach to amdf pitch detection.
+\newblock \emph{The Journal of the Acoustical Society of America}, 95\penalty0
+  (5):\penalty0 2817--2820, 1994.
+
+\bibitem[Zhao and Gan(October, 2013)]{zhao2013amdf}
+Huan Zhao and Wenjie Gan.
+\newblock A new pitch estimation method based on amdf.
+\newblock \emph{Journal of Multimedia}, 8\penalty0 (5):\penalty0 618--625,
+  October, 2013.
+
+\bibitem[Devillard(1998)]{devillard1998fast}
+Nicolas Devillard.
+\newblock Fast median search: an ansi c implementation.
+\newblock \emph{ndevilla AT free DOT fr}, 1998.
+
+\bibitem[Cipriani and Giri(2009)]{cipriani2009musica}
+Alessandro Cipriani and Maurizio Giri.
+\newblock \emph{Musica Elettronica e Sound Design, volume 1}.
+\newblock ConTempoNet, 2009.
+
+\bibitem[Piston(1978)]{piston1978harmony}
+Walter Piston.
+\newblock \emph{Harmony 4th Ed. revised and expanded by Mark Devoto}.
+\newblock London: Victor Gollancz LTD, 1978.
+
+\bibitem[Bellgard and Tsang(1994)]{boltzmann1994}
+M.~I. Bellgard and C.~P. Tsang.
+\newblock Harmonizing music the boltzmann way.
+\newblock \emph{Connection Science}, 6:\penalty0 281--297, 1994.
+
+\bibitem[Allan and Williams(2005)]{allan2005harmonising}
+Moray Allan and Christopher~KI Williams.
+\newblock Harmonising chorales by probabilistic inference.
+\newblock \emph{Advances in neural information processing systems},
+  17:\penalty0 25--32, 2005.
+
+\bibitem[Ueda et~al.(2010)Ueda, Uchiyama, Nishimoto, Ono, and
+  Sagayama]{ueda2010hmm}
+Yushi Ueda, Yuuki Uchiyama, Takuya Nishimoto, Nobutaka Ono, and Shigeki
+  Sagayama.
+\newblock Hmm-based approach for automatic chord detection using refined
+  acoustic features.
+\newblock \emph{Acoustics Speech and Signal Processing (ICASSP), 2010 IEEE
+  International Conference on}, pages 5518--5521, 2010.
+
+\bibitem[Paiement et~al.(2006)Paiement, Eck, and
+  Bengio]{paiement2006probabilistic}
+Jean-Fran{\c c}ois Paiement, Douglas Eck, and Samy Bengio.
+\newblock Probabilistic melodic harmonization.
+\newblock \emph{Advances in Artificial Intelligence}, pages 218--229, 2006.
+
+\bibitem[Smith(2010)]{smith2010physical}
+Julius~O Smith.
+\newblock \emph{Physical audio signal processing}.
+\newblock W3K Publishing, 2010.
+
+\bibitem[Gabor(1947)]{gabor1947acoustical}
+Dennis Gabor.
+\newblock Acoustical quanta and the theory of hearing.
+\newblock \emph{Nature}, 159\penalty0 (4044):\penalty0 591--594, 1947.
+
+\bibitem[von~dem Knesebeck et~al.(November, 2010)von~dem Knesebeck, Ziraksaz,
+  and Z{\"o}lzer]{vondemknesebeck2010high}
+Adrian von~dem Knesebeck, Pooya Ziraksaz, and Udo Z{\"o}lzer.
+\newblock High quality time-domain pitch shifting using psola and transient
+  preservation.
+\newblock \emph{Audio Engineering Society Convention 129}, November, 2010.
+
+\bibitem[Schnell et~al.(2000)Schnell, Peeters, Lemouton, Manoury, and
+  Rodet]{schnell2000synthesizing}
+Norbert Schnell, Geoffroy Peeters, Serge Lemouton, Philippe Manoury, and Xavier
+  Rodet.
+\newblock Synthesizing a choir in real-time using pitch synchronous overlap add
+  (psola).
+\newblock \emph{Proceedings of the International Computer Music Conference},
+  pages 102--108, 2000.
+
+\bibitem[Gordon and Strawn(1987)]{gordon1987vocoder}
+John~William Gordon and John Strawn.
+\newblock An introduction to the phase vocoder.
+\newblock \emph{CCRMA, Department of Music, Stanford University}, 1987.
+
+\bibitem[Roads(2002)]{roads2002microsound}
+Curtis Roads.
+\newblock \emph{Microsound}.
+\newblock MIT Press, 2002.
+
+\end{thebibliography}

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<pattrstorage name = "gran-1">
+	<slot number = "1" name = "porchiddii">
+		<pattr name = "Adjust" value = "0." />
+		<pattr name = "Adjust[1]" value = "0." />
+		<pattr name = "denisty" value = "0.314961" />
+		<pattr name = "grain-delay" value = "866.141724" />
+		<pattr name = "granulation" value = "1." />
+		<pattr name = "live.numbox" value = "1." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "main-scale" value = "0.937008" />
+		<pattr name = "max-amp" value = "0.677166" />
+		<pattr name = "max-len" value = "803.149597" />
+		<pattr name = "min-amp" value = "0.299213" />
+		<pattr name = "min-len" value = "125.984253" />
+		<pattr name = "morphing" value = "0.15748" />
+		<pattr name = "normalize" value = "100." />
+		<pattr name = "normalize[1]" value = "100." />
+		<pattr name = "pan-speed" value = "0.645669" />
+		<pattr name = "phasor-speed" value = "100." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "100." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "select" value = "0." />
+		<pattr name = "select[1]" value = "0." />
+		<pattr name = "zoom" value = "0." />
+		<pattr name = "zoom[1]" value = "0." />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+	<slot number = "2" name = "lammerda">
+		<pattr name = "Adjust" value = "0." />
+		<pattr name = "Adjust[1]" value = "0." />
+		<pattr name = "denisty" value = "0.314961" />
+		<pattr name = "grain-delay" value = "866.141724" />
+		<pattr name = "granulation" value = "1." />
+		<pattr name = "live.numbox" value = "2." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "main-scale" value = "0.937008" />
+		<pattr name = "max-amp" value = "0.677166" />
+		<pattr name = "max-len" value = "803.149597" />
+		<pattr name = "min-amp" value = "0.299213" />
+		<pattr name = "min-len" value = "125.984253" />
+		<pattr name = "morphing" value = "0.15748" />
+		<pattr name = "normalize" value = "100." />
+		<pattr name = "normalize[1]" value = "100." />
+		<pattr name = "pan-speed" value = "0.645669" />
+		<pattr name = "phasor-speed" value = "100." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "100." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "select" value = "0." />
+		<pattr name = "select[1]" value = "0." />
+		<pattr name = "zoom" value = "0." />
+		<pattr name = "zoom[1]" value = "0." />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+	<slot number = "3" name = "mammeta">
+		<pattr name = "Adjust" value = "" />
+		<pattr name = "Adjust[1]" value = "" />
+		<pattr name = "denisty" value = "" />
+		<pattr name = "grain-delay" value = "" />
+		<pattr name = "granulation" value = "" />
+		<pattr name = "live.numbox" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "main-scale" value = "" />
+		<pattr name = "max-amp" value = "" />
+		<pattr name = "max-len" value = "" />
+		<pattr name = "min-amp" value = "" />
+		<pattr name = "min-len" value = "" />
+		<pattr name = "morphing" value = "" />
+		<pattr name = "normalize" value = "" />
+		<pattr name = "normalize[1]" value = "" />
+		<pattr name = "pan-speed" value = "" />
+		<pattr name = "phasor-speed" value = "" />
+		<pattr name = "phi-jit" value = "" />
+		<pattr name = "pitch-1" value = "" />
+		<pattr name = "pitch-2" value = "" />
+		<pattr name = "rand-dur" value = "" />
+		<pattr name = "scattering" value = "" />
+		<pattr name = "select" value = "" />
+		<pattr name = "select[1]" value = "" />
+		<pattr name = "zoom" value = "" />
+		<pattr name = "zoom[1]" value = "" />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+	<slot number = "7" name = "mamma">
+		<pattr name = "Adjust" value = "" />
+		<pattr name = "Adjust[1]" value = "" />
+		<pattr name = "denisty" value = "" />
+		<pattr name = "grain-delay" value = "" />
+		<pattr name = "granulation" value = "" />
+		<pattr name = "live.numbox" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "main-scale" value = "" />
+		<pattr name = "max-amp" value = "" />
+		<pattr name = "max-len" value = "" />
+		<pattr name = "min-amp" value = "" />
+		<pattr name = "min-len" value = "" />
+		<pattr name = "morphing" value = "" />
+		<pattr name = "normalize" value = "" />
+		<pattr name = "normalize[1]" value = "" />
+		<pattr name = "pan-speed" value = "" />
+		<pattr name = "phasor-speed" value = "" />
+		<pattr name = "phi-jit" value = "" />
+		<pattr name = "pitch-1" value = "" />
+		<pattr name = "pitch-2" value = "" />
+		<pattr name = "rand-dur" value = "" />
+		<pattr name = "scattering" value = "" />
+		<pattr name = "select" value = "" />
+		<pattr name = "select[1]" value = "" />
+		<pattr name = "zoom" value = "" />
+		<pattr name = "zoom[1]" value = "" />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+	<slot number = "9" name = "sergio">
+		<pattr name = "Adjust" value = "" />
+		<pattr name = "Adjust[1]" value = "" />
+		<pattr name = "denisty" value = "" />
+		<pattr name = "grain-delay" value = "" />
+		<pattr name = "granulation" value = "" />
+		<pattr name = "live.numbox" value = "" />
+		<pattr name = "live.text" value = "" />
+		<pattr name = "main-scale" value = "" />
+		<pattr name = "max-amp" value = "" />
+		<pattr name = "max-len" value = "" />
+		<pattr name = "min-amp" value = "" />
+		<pattr name = "min-len" value = "" />
+		<pattr name = "morphing" value = "" />
+		<pattr name = "normalize" value = "" />
+		<pattr name = "normalize[1]" value = "" />
+		<pattr name = "pan-speed" value = "" />
+		<pattr name = "phasor-speed" value = "" />
+		<pattr name = "phi-jit" value = "" />
+		<pattr name = "pitch-1" value = "" />
+		<pattr name = "pitch-2" value = "" />
+		<pattr name = "rand-dur" value = "" />
+		<pattr name = "scattering" value = "" />
+		<pattr name = "select" value = "" />
+		<pattr name = "select[1]" value = "" />
+		<pattr name = "zoom" value = "" />
+		<pattr name = "zoom[1]" value = "" />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+	<slot number = "15" name = "dioladro">
+		<pattr name = "Adjust" value = "0." />
+		<pattr name = "Adjust[1]" value = "0." />
+		<pattr name = "denisty" value = "0.314961" />
+		<pattr name = "grain-delay" value = "866.141724" />
+		<pattr name = "granulation" value = "1." />
+		<pattr name = "live.numbox" value = "15." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "main-scale" value = "0.937008" />
+		<pattr name = "max-amp" value = "0.677166" />
+		<pattr name = "max-len" value = "803.149597" />
+		<pattr name = "min-amp" value = "0.299213" />
+		<pattr name = "min-len" value = "125.984253" />
+		<pattr name = "morphing" value = "0.15748" />
+		<pattr name = "normalize" value = "100." />
+		<pattr name = "normalize[1]" value = "100." />
+		<pattr name = "pan-speed" value = "0.645669" />
+		<pattr name = "phasor-speed" value = "100." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "100." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "select" value = "0." />
+		<pattr name = "select[1]" value = "0." />
+		<pattr name = "zoom" value = "0." />
+		<pattr name = "zoom[1]" value = "0." />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+	<slot number = "18" name = "madonnadimerda">
+		<pattr name = "Adjust" value = "0." />
+		<pattr name = "Adjust[1]" value = "0." />
+		<pattr name = "denisty" value = "0.314961" />
+		<pattr name = "grain-delay" value = "866.141724" />
+		<pattr name = "granulation" value = "1." />
+		<pattr name = "live.numbox" value = "18." />
+		<pattr name = "live.text" value = "1." />
+		<pattr name = "main-scale" value = "0.937008" />
+		<pattr name = "max-amp" value = "0.677166" />
+		<pattr name = "max-len" value = "803.149597" />
+		<pattr name = "min-amp" value = "0.299213" />
+		<pattr name = "min-len" value = "125.984253" />
+		<pattr name = "morphing" value = "0.15748" />
+		<pattr name = "normalize" value = "100." />
+		<pattr name = "normalize[1]" value = "100." />
+		<pattr name = "pan-speed" value = "0.645669" />
+		<pattr name = "phasor-speed" value = "100." />
+		<pattr name = "phi-jit" value = "0.102362" />
+		<pattr name = "pitch-1" value = "100." />
+		<pattr name = "pitch-2" value = "100." />
+		<pattr name = "rand-dur" value = "1." />
+		<pattr name = "scattering" value = "0." />
+		<pattr name = "select" value = "0." />
+		<pattr name = "select[1]" value = "0." />
+		<pattr name = "zoom" value = "0." />
+		<pattr name = "zoom[1]" value = "0." />
+		<patcher name = "fct-window">
+			<pattr name = "scale" value = "1." />
+			<pattr name = "sigma" value = "0.5" />
+			<pattr name = "size" value = "1024" />
+			<pattr name = "window-function" value = "2" />
+		</patcher>
+	</slot>
+</pattrstorage>
+

@@ -1,0 +1,57 @@
+{
+	"pattrstorage" : 	{
+		"name" : "test",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "Sesso",
+				"data" : 				{
+					"cazzo" : [ 31.0 ],
+					"culo" : [ 65.0 ],
+					"figa" : [ 83.0 ],
+					"tette" : [ 23.0 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"name" : "Miracolo",
+				"data" : 				{
+					"cazzo" : [ 85.0 ],
+					"culo" : [ 97.0 ],
+					"figa" : [ 22.0 ],
+					"tette" : [ 82.0 ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"name" : "la-topa-maiala",
+				"data" : 				{
+					"cazzo" : [ 26.0 ],
+					"culo" : [ 127.0 ],
+					"figa" : [ 85.0 ],
+					"tette" : [ 127.0 ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"name" : "trans",
+				"data" : 				{
+					"cazzo" : [ 95.0 ],
+					"culo" : [ 127.0 ],
+					"figa" : [ 0.0 ],
+					"tette" : [ 127.0 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,145 @@
+{
+	"pattrstorage" : 	{
+		"name" : "grain-preset",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "preset-1",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.696772 ],
+					"grain-delay" : [ 1212.598425 ],
+					"granulation" : [ 1.0 ],
+					"main-scale" : [ 0.346457 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149606 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984252 ],
+					"morphing" : [ 0.748031 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.590551 ],
+					"phi-jit" : [ 0.102362 ],
+					"rand-amp" : [ 1.0 ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 1.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"function::scale" : [ 1.0 ],
+					"function::sigma" : [ 0.452756 ],
+					"function::size" : [ 1024 ],
+					"function::window-function" : [ 2 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"name" : "preset-2",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.256929 ],
+					"grain-delay" : [ 330.708661 ],
+					"granulation" : [ 1.0 ],
+					"main-scale" : [ 0.574803 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149606 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984252 ],
+					"morphing" : [ 0.897637 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.787401 ],
+					"phi-jit" : [ 0.102362 ],
+					"rand-amp" : [ 1.0 ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"function::scale" : [ 1.0 ],
+					"function::sigma" : [ 0.452756 ],
+					"function::size" : [ 1024 ],
+					"function::window-function" : [ 3 ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"name" : "preset-3",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.256929 ],
+					"grain-delay" : [ 330.708661 ],
+					"granulation" : [ 1.0 ],
+					"main-scale" : [ 0.929134 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149606 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984252 ],
+					"morphing" : [ 1.0 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.787401 ],
+					"phi-jit" : [ 0.102362 ],
+					"rand-amp" : [ 1.0 ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"function::scale" : [ 1.0 ],
+					"function::sigma" : [ 0.452756 ],
+					"function::size" : [ 1024 ],
+					"function::window-function" : [ 0 ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"name" : "sym",
+				"data" : 				{
+					"Adjust" : [ 0.0 ],
+					"Adjust[1]" : [ 0.0 ],
+					"denisty" : [ 0.881969 ],
+					"grain-delay" : [ 1511.811023 ],
+					"granulation" : [ 1.0 ],
+					"main-scale" : [ 0.929134 ],
+					"max-amp" : [ 0.677166 ],
+					"max-len" : [ 803.149606 ],
+					"min-amp" : [ 0.299213 ],
+					"min-len" : [ 125.984252 ],
+					"morphing" : [ 1.0 ],
+					"normalize" : [ 100.0 ],
+					"normalize[1]" : [ 100.0 ],
+					"pan-speed" : [ 0.787401 ],
+					"phi-jit" : [ 0.102362 ],
+					"rand-amp" : [ 1.0 ],
+					"rand-dur" : [ 1.0 ],
+					"scattering" : [ 0.0 ],
+					"select" : [ 0.0 ],
+					"select[1]" : [ 0.0 ],
+					"zoom" : [ 0.0 ],
+					"zoom[1]" : [ 0.0 ],
+					"function::scale" : [ 1.0 ],
+					"function::sigma" : [ 0.452756 ],
+					"function::size" : [ 1024 ],
+					"function::window-function" : [ 0 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

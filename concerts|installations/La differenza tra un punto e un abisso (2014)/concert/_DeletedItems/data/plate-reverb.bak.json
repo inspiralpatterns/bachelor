@@ -1,0 +1,55 @@
+{
+	"pattrstorage" : 	{
+		"name" : "plate-reverb[2]",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "plate-1",
+				"data" : 				{
+					"live.numbox" : [ 1.0 ],
+					"live.slider" : [ 0.880212 ],
+					"live.slider[1]" : [ 0.474581 ],
+					"live.text" : [ 1.0 ],
+					"plate-balance" : [ 0.314961 ],
+					"plate-bandwidth" : [ 940.944885 ],
+					"plate-damp" : [ 1807.08667 ],
+					"plate-decay-1" : [ 0.268504 ],
+					"plate-decay-2" : [ 0.777795 ],
+					"plate-input-1" : [ 0.731496 ],
+					"plate-input-2" : [ 0.307087 ],
+					"plate-main" : [ 1.433071 ],
+					"plate-mod" : [ 2.023622 ],
+					"plate-pre" : [ 300.787415 ],
+					"plate-time" : [ 0.078827 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"name" : "plate-2",
+				"data" : 				{
+					"live.numbox" : [ 2.0 ],
+					"live.slider" : [ 0.000796 ],
+					"live.slider[1]" : [ 1.0 ],
+					"live.text" : [ 1.0 ],
+					"plate-balance" : [ 1.0 ],
+					"plate-bandwidth" : [ 1933.070923 ],
+					"plate-damp" : [ 531.496033 ],
+					"plate-decay-1" : [ 0.646614 ],
+					"plate-decay-2" : [ 0.484567 ],
+					"plate-input-1" : [ 0.260787 ],
+					"plate-input-2" : [ 0.307087 ],
+					"plate-main" : [ 0.425197 ],
+					"plate-mod" : [ 3.637795 ],
+					"plate-pre" : [ 0.0 ],
+					"plate-time" : [ 0.598408 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,25 @@
+% Appendix A
+
+\chapter{MSP external code} % Main appendix title
+
+\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix B. \emph{MSP external code}} % This is for the header on each page - perhaps a shortened title
+
+Here, the main methods of the two externals built in Xcode 6, labelled \emph{perform}, are presented.
+They are excerpts of a longer codes that include all the information about MSP external construction, initialisation and all the methods with which the user can set the object and modify its behaviour. 
+\newline
+Generally, everyone of these codes contains a section relative to the class making. In fact, each externals has an internal class that specifies all the member variables used by its own functions and all the methods. For simplicity, the DSP class method is always called \emph{perform}. It's a void function that is called when the audio turns on in Max. 
+\newline
+Finally, every class contains two function named as the class itself. One is the initialisation function, the so-called \emph{constructor}. The other is the \emph{destructor}, that is the function acting when the external is removed into the Max patcher. The purpose of this function is to free the memory previously occupied by interal buffers. 
+
+All this codes are written using C++ programming language.
+\newline
+\newline
+\newline
+\section{Pitchdetect$\sim$}
+\label{pitchcode}
+\lstinputlisting[caption=The pitchdetect$\sim$ \emph{perform} function]{Code/pitchdetect.cpp}
+\section{Dlshift$\sim$}
+\label{shiftcode}
+\lstinputlisting[caption=The dlshift$\sim$ \emph{perform} function]{Code/dlshifter.cpp}
